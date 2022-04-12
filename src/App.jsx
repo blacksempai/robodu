@@ -1,17 +1,18 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
-import Profile from './components/Profile'
+import Profile from './components/profile/Profile'
+import Navigation from './components/navigation/Navigation'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Robocode dating app "Robodu"
-        </p>
+    <div className="container">
+      <div className="left">
+        <img className='logo' src={logo} alt="" />
+        <Navigation />
+      </div>
+      <div className="right">
         <Profile />
-      </header>
+      </div>
     </div>
   );
 }

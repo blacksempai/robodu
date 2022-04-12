@@ -1,6 +1,6 @@
-import './Profile.css';
+import './ProfileInfo.css';
 
-const Profile = () => {
+const ProfileInfo = () => {
     return (
         <div>
             <h1>Profile</h1>
@@ -10,4 +10,4 @@ const Profile = () => {
     );
 }
 
-export default Profile;
+export default ProfileInfo;
