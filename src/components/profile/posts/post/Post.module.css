@@ -1,8 +1,7 @@
 .post {
     display: flex;
-    gap: 20px;
-    padding: 5px 20px;
-    background-color: blue;
+    gap: 1rem;
+    padding: 5px 0;
 }
 
 .post img {

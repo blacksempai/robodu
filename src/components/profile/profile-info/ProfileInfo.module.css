@@ -1,0 +1,10 @@
+.ProfileInfo {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ava {
+    width: 12rem;
+    height: 12rem;
+}
