@@ -5,10 +5,12 @@ const ProfileInfo = () => {
     return (
         <div className={classes.ProfileInfo}>
             <img src={ava} alt="Avatar" className={classes.ava}/>
-            <div className="info">
-                <h1>Profile</h1>
-                <p>Name: Andriy</p>
-                <p>Age: 95</p>
+            <div className={classes.info}>
+                <h1>Andriy Moskalenko</h1>
+                <p>Status: married</p>
+                <p>Age: 24</p>
+                <p>Hobbies: Web-design, bass guitar</p>
+                <p>University: KNUTD</p>
             </div>
         </div>
     );

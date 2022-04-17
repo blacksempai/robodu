@@ -8,3 +8,8 @@
     width: 12rem;
     height: 12rem;
 }
+
+.info * {
+    margin: 0.5rem 0;
+    padding: 0;
+}
