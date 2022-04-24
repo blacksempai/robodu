@@ -1,7 +1,9 @@
 import classes from './Posts.module.css';
 import Post from './post/Post';
 
-const Posts = () => {
+const Posts = (props) => {
+    let posts = a.map( post => <Post text={post.text} /> );
+
     return (
         <div>
             <h1>Posts:</h1>
@@ -10,9 +12,7 @@ const Posts = () => {
                 <button>Send</button>
             </form>
             <div className={classes.posts}>
-                <Post text="Hello, my dear friend!"/>
-                <Post text="Hello, How are You?" />    
-                <Post text="I hate my life, because of React" />
+                {posts}
             </div>
         </div>
     );
