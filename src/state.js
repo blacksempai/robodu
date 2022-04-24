@@ -1,8 +1,8 @@
 const state = {
     posts: [
-        {text:"Hello, my dear friend!"},
-        {text:"Hello, How are You?"},
-        {text:"Wow"}
+        {id:1, text:"Hello, my dear friend!"},
+        {id:2, text:"Hello, How are You?"},
+        {id:3, text:"Wow"}
     ]
 }
 
