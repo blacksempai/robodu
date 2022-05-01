@@ -8,17 +8,18 @@ const Posts = (props) => {
 
     let textRef = React.createRef();
     
-    let addPost = () => {
+    let addPost = (e) => {
+        e.preventDefault();
         let text = textRef.current.value;
-        alert(text)
+        props.addPost(text);
     }
 
     return (
         <div>
             <h1>Posts:</h1>
-            <form>
+            <form onSubmit={addPost}>
                 <textarea ref={textRef} className={classes.text}></textarea>
-                <button onClick={addPost} >Send</button>
+                <button>Send</button>
             </form>
             <div className={classes.posts}>
                 {posts}
