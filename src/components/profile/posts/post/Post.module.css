@@ -9,3 +9,9 @@
     height: 50px;
     border-radius: 50%;
 }
+
+.like_btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
