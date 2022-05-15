@@ -1,9 +1,10 @@
+import { addLikeActionCreator } from '../../../../redux/postReducer';
 import classes from './Post.module.css';
 
 const Post = (props) => {
 
     const addLike = () => {
-        let action = { type: 'ADD_LIKE', id: props.id};
+        let action = addLikeActionCreator(props.id);
         props.dispatch(action);
     }
 

@@ -1,18 +1,20 @@
 import classes from './Posts.module.css';
 import Post from './post/Post';
 import React from 'react';
+import { addPostActionCreator, newPostTextActionCreator } from '../../../redux/postReducer';
+
 
 const Posts = (props) => {
     let posts = props.posts.map( post => <Post key={post.id} id={post.id} text={post.text} likes={post.likes} dispatch={props.dispatch} /> );
     
     let addPost = (e) => {
         e.preventDefault();
-        let action = { type: "ADD_POST" }
+        let action = addPostActionCreator();
         props.dispatch(action);
     }
 
     let textChanged = (e) => {
-        let action = { type: "CHANGE_NEW_POST_TEXT", text: e.target.value }
+        let action = newPostTextActionCreator(e.target.value);
         props.dispatch(action);
     }
 

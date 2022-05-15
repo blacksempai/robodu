@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import state, {subscribe, dispatch} from './state'
+import store from './redux/store'
 
 const renderEntireTree = () => {
-    ReactDOM.render(<App state={state} dispatch={dispatch}/>,  document.getElementById('root'));
+    ReactDOM.render(<App state={store.getState()} dispatch={store.dispatch.bind(store)}/>,  document.getElementById('root'));
 }
 
 renderEntireTree();
-subscribe(renderEntireTree);
+store.subscribe(renderEntireTree);
