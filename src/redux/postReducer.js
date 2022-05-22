@@ -2,7 +2,16 @@ const ADD_POST = 'ADD_POST';
 const ADD_LIKE = 'ADD_LIKE';
 const CHANGE_NEW_POST_TEXT = 'CHANGE_NEW_POST_TEXT';
 
-const postReducer = (action, state) => {
+let initialState = {
+    posts: [
+        {id:0, text:"Hello, my dear friend!", likes: 5},
+        {id:1, text:"Hello, How are You?", likes: 10},
+        {id:2, text:"Wow", likes: 0}
+    ],
+    newPostText: ""
+}
+
+const postReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_POST: 
             let post = {
@@ -15,7 +24,7 @@ const postReducer = (action, state) => {
         
         case ADD_LIKE: 
             state.posts[action.id].likes++;
-            break
+            break;
 
         case CHANGE_NEW_POST_TEXT: 
             state.newPostText = action.text;

@@ -31,10 +31,9 @@ getState() {
 },
 
 dispatch(action) {     
-    this._state.postState = postReducer(action, this._state.postState);
+    this._state.postState = postReducer(this._state.postState, action);
     this._notifySubscriber();
 }
 }
 
 export default store;
-
