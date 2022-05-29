@@ -1,18 +1,15 @@
 import classes from './Messages.module.css'
-import { newMsgTextActionCreator, addMsgActionCreator } from './../../../redux/dialogReducer';
 
 const Messages = (props) => {
 
     let msg = props.messages.map(m => <li>{m.content} || {m.author}</li>)
 
     let onTextChange = (e) => {
-        let action = newMsgTextActionCreator(e.target.value);
-        props.dispatch(action);
+        props.changeText(e.target.value);
     }
 
     let onSendClick = () => {
-        let action = addMsgActionCreator();
-        props.dispatch(action);
+        props.sendMsg();
     }
 
     return (
