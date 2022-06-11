@@ -13,8 +13,10 @@ let initialState = {
 const dialogReducer = (state = initialState, action) => {
     switch(action.type) {
         case NEW_MSG_TEXT: 
-        state.newMsgText = action.text
-        return state;
+            return {
+                ...state,
+                newMsgText: action.text
+            }
 
         case ADD_MSG: 
         let msg = {
@@ -22,8 +24,10 @@ const dialogReducer = (state = initialState, action) => {
             content: state.newMsgText,
             author: "Vlados"
         }
-        state.messages.push(msg);
-        return state;
+        return {
+            ...state,
+            messages: [...state.messages, msg]
+        }
 
         default: 
         return state;

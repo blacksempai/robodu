@@ -19,21 +19,26 @@ const postReducer = (state = initialState, action) => {
                 text: state.newPostText,
                 likes: 0
             }
-            state.posts.push(post);
-            break;
+            return {
+                ...state,
+                posts: [...state.posts, post]
+            }
         
         case ADD_LIKE: 
-            state.posts[action.id].likes++;
-            break;
+            return {
+                ...state,
+                posts: state.posts.map((p) => p.id === action.id ? {...p, likes: p.likes+1 } : p ) 
+            }
 
         case CHANGE_NEW_POST_TEXT: 
-            state.newPostText = action.text;
-            break;
+            return {
+                ...state,
+                newPostText: action.text
+            }
 
         default: 
-            break;
+            return state;
     }
-    return state;
 }
 
 export default postReducer;
