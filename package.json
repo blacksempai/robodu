@@ -1,0 +1,28 @@
+{
+  "name": "robodu",
+  "version": "1.0.0",
+  "description": "Dating Social Network created by students of Robocode",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blacksempai/robodu.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "express",
+    "node.js",
+    "mongo",
+    "dating",
+    "social"
+  ],
+  "author": "Andriy Moskalenko <benjaminfranclin1998@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blacksempai/robodu/issues"
+  },
+  "homepage": "https://github.com/blacksempai/robodu#readme"
+}
