@@ -6,6 +6,12 @@ const PORT = config.get('port') || 5000;
 
 const app = express();
 
+app.use(require('cors')({origin: '*'}));
+app.use(express.json());
+
+app.use('/users', require('./routes/users'));
+app.use('/auth', require('./routes/auth'));
+
 async function start() {
     try {
         await mongoose.connect(config.get('mongoURI'));
@@ -17,14 +23,3 @@ async function start() {
 }
 
 start();
-
-app.get('/users', async (req, res) => {
-    try {
-        let users = await User.find();
-        res.json(users);
-    }
-    catch(e) {
-        console.log(e);
-        res.status(500).send('Internal Server Error');
-    }
-})

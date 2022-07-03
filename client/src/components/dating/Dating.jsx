@@ -7,6 +7,7 @@ const Dating = (props) => {
             <img width='150' src={u.photoURL} alt="ava" />
             <h3>{u.name}</h3>
             <p>Age: {u.age} Gender: {u.gender}</p>
+            <p>login: {u.login}  password: {u.password}</p>
         </div>
      );
     
