@@ -2,9 +2,12 @@ import logo from './logo.png';
 import './App.css';
 import Profile from './components/profile/Profile'
 import Navigation from './components/navigation/Navigation'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import DialogsContainer from './components/dialogs/DialogsContainer';
 import DatingContainer from './components/dating/DatingContainer';
+import { connect } from 'react-redux';
+import LoginForm from './components/auth/login/LoginForm';
+import RegisterForm from './components/auth/register/RegisterForm';
 
 function App(props) {
   return (
@@ -14,14 +17,30 @@ function App(props) {
           <Navigation />
         </div>
         <div className="right">
-          <Routes>
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/dialogs' element={<DialogsContainer />} />
-            <Route path='/dating' element={<DatingContainer />}/>
-          </Routes>
+          {
+            props.isAuthenticated ? 
+            <Routes>
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/dialogs' element={<DialogsContainer />} />
+              <Route path='/dating' element={<DatingContainer />}/>
+            </Routes>
+            :
+            <Routes>
+              <Route path='/login' element={<LoginForm />} />
+              <Route path='/register' element={<RegisterForm />} />
+              <Route path="*" element={<Navigate to="/login" />}/>
+            </Routes>
+          }
+
         </div>
       </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  }
+}
+
+export default connect(mapStateToProps)(App);

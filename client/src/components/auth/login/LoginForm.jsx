@@ -20,4 +20,4 @@ const LoginForm = (props) => {
     )
 }
 
-export default connect({login})(LoginForm);
+export default connect(null, {login})(LoginForm);

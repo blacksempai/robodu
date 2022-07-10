@@ -24,4 +24,4 @@ const RegisterForm = (props) => {
     )
 }
 
-export default connect({register})(RegisterForm);
+export default connect(null, {register})(RegisterForm);

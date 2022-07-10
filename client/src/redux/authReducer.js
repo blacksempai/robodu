@@ -34,7 +34,8 @@ export const login = (login, password) => {
     return (dispatch) => {
         axios.post('http://localhost:5000/auth/login', {login, password})
             .then((data) => {
-                console.log(data);
+                axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.data.token;
+                dispatch(setCredentionals(data.data));
             });
     }
 }

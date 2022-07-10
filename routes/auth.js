@@ -8,9 +8,9 @@ const config = require('config');
 // auth/register
 router.post('/register', async (req, res) => {
     try {
-
+        console.log(req.body)
         const { login, password } = req.body;
-        const candidate = await User.find(login);
+        const candidate = await User.findOne({login});
 
         if(candidate) {
            return res.status(400).json({message: 'User Already exists'});
@@ -34,9 +34,8 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        
         const { login, password } = req.body;
-        const candidate = await User.find(login);
+        const candidate = await User.findOne({login});
         
         if(!candidate) {
             res.status(400).json({message: 'User not found'});
@@ -57,10 +56,10 @@ router.post('/login', async (req, res) => {
         res.json({token, id: candidate._id});
 
     }
-    catch(r) {
+    catch(e) {
         console.log(e);
         res.status(500).json({message: 'Internal server error'});
     }
 })
 
-module.exports = routers;
+module.exports = router;
