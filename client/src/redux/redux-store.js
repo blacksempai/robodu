@@ -12,7 +12,6 @@ const store = configureStore({
         auth: authReducer
     }
 });
-
 window.store = store
 
 export default store;

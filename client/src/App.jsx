@@ -14,7 +14,7 @@ function App(props) {
       <div className="container">
         <div className="left">
           <img className='logo' src={logo} alt="" />
-          <Navigation />
+          <Navigation isAuthenticated={props.isAuthenticated} />
         </div>
         <div className="right">
           {
@@ -23,6 +23,7 @@ function App(props) {
               <Route path='/profile' element={<Profile />} />
               <Route path='/dialogs' element={<DialogsContainer />} />
               <Route path='/dating' element={<DatingContainer />}/>
+              <Route path="*" element={<Navigate to="/profile" />}/>
             </Routes>
             :
             <Routes>
